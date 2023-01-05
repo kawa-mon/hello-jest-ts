@@ -79,3 +79,8 @@ it('can1 and can2 have the same properties', () => {
 it('can2 and can4 have the same properties', () => {
   expect(can2).toEqual(can4)
 })
+
+// can2 と can4 は等しくないと評価される
+it('can2 and can4 are different class', () => {
+  expect(can2).not.toStrictEqual(can4)
+})
