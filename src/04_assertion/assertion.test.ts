@@ -69,3 +69,13 @@ it('can1 and can2 are not the exact same instance', () => {
 it('can2 and can3 are the same instance', () => {
   expect(can2).toBe(can3)
 })
+
+// can1 と can2 は等しいと評価される
+it('can1 and can2 have the same properties', () => {
+  expect(can1).toEqual(can2)
+})
+
+// can2 と can4 は等しいと評価される
+it('can2 and can4 have the same properties', () => {
+  expect(can2).toEqual(can4)
+})
