@@ -1,0 +1,29 @@
+{
+  "name": "hello-jest-ts",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "## Version",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kawa-mon/hello-jest-ts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kawa-mon/hello-jest-ts/issues"
+  },
+  "homepage": "https://github.com/kawa-mon/hello-jest-ts#readme",
+  "devDependencies": {
+    "@types/jest": "^27.5.1",
+    "@types/node": "^14.14.10",
+    "jest": "^28.1.0",
+    "ts-jest": "^28.0.3",
+    "ts-node": "^10.8.1",
+    "typescript": "^4.6.2"
+  }
+}
