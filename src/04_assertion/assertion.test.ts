@@ -84,3 +84,29 @@ it('can2 and can4 have the same properties', () => {
 it('can2 and can4 are different class', () => {
   expect(can2).not.toStrictEqual(can4)
 })
+
+class User {
+  name: string
+  password: string
+  constructor({ name, password }: { name: string; password: string }) {
+    if (password.length < 6)
+      throw new Error('The password length must be at least 6 characters.')
+    this.name = name
+    this.password = password
+  }
+}
+
+it('creates a new user with a 6-characters password', () => {
+  expect(new User({ name: 'hoge', password: '123456' })).toEqual({
+    name: 'hoge',
+    password: '123456',
+  })
+})
+
+it('throw Error when the length of password is less than 6', () => {
+  expect(() => new User({ name: 'hoge', password: '12345' })).toThrow() // Errorがthrowされたかのチェック
+  expect(() => new User({ name: 'hoge', password: '12345' })).toThrow(Error) //型のチェック
+  expect(() => new User({ name: 'hoge', password: '12345' })).toThrow(
+    'The password length must be at least 6 characters.'
+  ) //エラーメッセージのチェック
+})
