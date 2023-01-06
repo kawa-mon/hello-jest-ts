@@ -110,3 +110,15 @@ it('throw Error when the length of password is less than 6', () => {
     'The password length must be at least 6 characters.'
   ) //エラーメッセージのチェック
 })
+
+const fetchDataWithCallback = (callback: Function) => {
+  setTimeout(callback, 3000, 'lemon')
+}
+
+it('return lemon', (done) => {
+  const callback = (data: string) => {
+    expect(data).toBe('lemon')
+    done() //テストの終了を宣言
+  }
+  fetchDataWithCallback(callback)
+})
