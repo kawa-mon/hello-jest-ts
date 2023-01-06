@@ -63,3 +63,16 @@ describe('Math.random', () => {
     ).toBe(0.2) // Math.random関数の結果は0.2である
   })
 })
+
+describe('mockImplementationOnce', () => {
+  it('returns the configured result only once', () => {
+    Math.random = jest
+      .fn()
+      .mockImplementationOnce(() => '0.2')
+      .mockImplementationOnce(() => '0.1')
+
+    expect(chohan()).toBe('丁')
+    expect(chohan()).toBe('半')
+    expect(chohan()).toBe(undefined)
+  })
+})
