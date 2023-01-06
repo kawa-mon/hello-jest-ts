@@ -111,14 +111,19 @@ it('throw Error when the length of password is less than 6', () => {
   ) //エラーメッセージのチェック
 })
 
-const fetchDataWithCallback = (callback: Function) => {
-  setTimeout(callback, 3000, 'lemon')
-}
+const fetchDataWithPromiseResolve = () =>
+  new Promise((resolve) => setTimeout(resolve, 1000, 'lemon'))
 
-it('return lemon', (done) => {
-  const callback = (data: string) => {
-    expect(data).toBe('lemon')
-    done() //テストの終了を宣言
-  }
-  fetchDataWithCallback(callback)
+it('return lemon', () => {
+  return expect(fetchDataWithPromiseResolve()).resolves.toBe('lemon')
+})
+
+it('return lemon by using async/await', async () => {
+  await expect(fetchDataWithPromiseResolve()).resolves.toBe('lemon')
+})
+
+const fetchDataWithPromiseReject = () => Promise.reject(new Error('not exist'))
+
+it('return Promise.reject', async () => {
+  await expect(fetchDataWithPromiseReject()).rejects.toThrow('not exist')
 })
