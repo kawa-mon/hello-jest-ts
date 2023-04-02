@@ -4,5 +4,5 @@
 
 - Node.js: v18.14.0
 - npm: 9.3.1
-- Jest: 28.1.0
-- TypeScript: 4.6.2
+- Jest: 29.4.3
+- TypeScript: 4.9.5
