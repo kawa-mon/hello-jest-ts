@@ -5,7 +5,7 @@
   "description": "## Version",
   "main": "index.js",
   "scripts": {
-    "test": "jest src"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
